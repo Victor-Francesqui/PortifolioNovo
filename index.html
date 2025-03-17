@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="menu-opcoes-botao"
+        onclick="document.getElementById('menu-opcoes').classList.toggle('show'); this.classList.toggle('ativo');">
+            <img src="imgs/menu.png" alt="Menu" class="icone-menu">
+            <img src="imgs/fechar-menu.png" alt="Cancelar" class="icone-cancelar">
+        </div>
+        <div id="menu-opcoes" class="menu-opcoes">
+            <ul>
+                <li><a href="#" onclick="scrollToSection('about')">Sobre Mim</a></li>
+                <li><a href="#" onclick="scrollToSection('habilidades')">Habilidades</a></li>
+              </ul>            
+        </div>
+        <a href="#" class="nome-portifolio" onclick="window.scrollTo(0, 0);">Portifólio</a>
+        <label class="switch">
+            <input type="checkbox" id="troca-tema"
+                onclick="document.body.classList.toggle('claro'); document.querySelector('.menu-opcoes-botao').classList.toggle('claro'); document.querySelector('.tema-botao').classList.toggle('claro');">
+            <span class="slider"></span>
+        </label>
+    </header>
+
+    <div class="container">
+        <div class="text-area">
+            <h1>Olá, eu sou o <span class="highlight">Victor Francesqui</span></h1>
+            <p>Desenvolvedor Front-End</p>
+            <div class="buttons">
+                <a href="#" class="btn download">Baixar Portifólio</a>
+                <a href="#" class="btn contact">Entrar em contato</a>
+            </div>
+        </div>
+        <div class="image-area">
+            <img src="imgs/victor.jpg" alt="Victor Francesqui" class="profile-image">
+        </div>
+    </div>
+    <div class="about">
+        <h2>Sobre mim</h2>
+        <p>Sou iniciante na área da programação, atualmente estou estudando desenvolvimento web e me aprofundando em
+            tecnologias como HTML, CSS e JavaScript.</p>
+        <p>Começando a aprender novas bibliotecas e frameworks para melhorar minhas habilidades e criar projetos mais
+            complexos.</p>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <h2 class="habilidades">Habilidades</h2>
+    <div class="skills-container">
+        <div class="skill">
+            <img src="imgs/icone-html5.png" alt="HTML5" class="icone-skill">
+            HTML5
+        </div>
+        <div class="skill">
+            <img src="imgs/icone-css3.png" alt="CSS3" class="icone-skill">
+            CSS3
+        </div>
+        <div class="skill">
+            <img src="imgs/icone-js.png" alt="JavaScript" class="icone-skill">
+            JavaScript
+        </div>
+        <div class="skill">
+            <img src="imgs/icone-figma.png" alt="Figma" class="icone-skill">
+            Figma
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>

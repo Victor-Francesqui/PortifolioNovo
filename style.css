@@ -1,0 +1,399 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+body.claro {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.5s;
+    box-shadow: 0 2px 0 #9b59b6;
+}
+
+header.claro {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.nome-portifolio {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nome-portifolio:hover {
+    color: #9b59b6;
+}
+
+.menu-opcoes {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scaleY(0);
+}
+
+.menu-opcoes.show {
+    display: block;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.menu-opcoes ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-opcoes ul li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.menu-opcoes ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-opcoes ul li a:hover {
+    color: #9b59b6;
+}
+
+.menu-opcoes-botao {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.icone-menu {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.icone-cancelar {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.menu-opcoes-botao.ativo .icone-menu {
+    display: none;
+}
+
+.menu-opcoes-botao.ativo .icone-cancelar {
+    display: block;
+}
+
+.menu-opcoes-botao::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: #333;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.menu-opcoes-botao:hover::before {
+    transform: scale(1.2);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    /* Largura do botão */
+    height: 34px;
+    /* Altura do botão */
+}
+
+.switch input {
+    opacity: 0;
+    /* Esconde o checkbox */
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9b59b6;
+    /* Cor do botão desativado */
+    transition: .4s;
+    border-radius: 34px;
+    /* Arredondar os cantos */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    /* Altura do círculo */
+    width: 26px;
+    /* Largura do círculo */
+    left: 4px;
+    /* Posição inicial do círculo */
+    bottom: 4px;
+    background-color: #000;
+    /* Cor do círculo */
+    border-radius: 50%;
+    /* Tornar o círculo */
+    transition: .4s;
+}
+
+/* Estilo quando o botão está ativado */
+input:checked+.slider {
+    background-color: #f0f0f0;
+    /* Cor do botão ativado */
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+    /* Move o círculo para a direita */
+}
+
+.tema-botao {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.tema-botao.claro {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px;
+    padding-left: 250px;
+    padding-right: 250px;
+    transition: background-color 0.5s;
+}
+
+.container.claro {
+    background-color: #f0f0f0;
+}
+
+.text-area {
+    max-width: 600px;
+}
+
+h1 {
+    font-size: 36px;
+    transition: color 0.5s;
+}
+
+h1.claro {
+    color: #333;
+}
+
+.highlight {
+    color: #9b59b6;
+    transition: color 0.5s;
+}
+
+.highlight.claro {
+    color: #333;
+}
+
+p {
+    font-size: 20px;
+    transition: color 0.5s;
+}
+
+p.claro {
+    color: #333;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.download {
+    background-color: transparent;
+    border: 2px solid #9b59b6;
+    color: #9b59b6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download:hover {
+    background-color: #9b59b6;
+    color: #fff;
+}
+
+.download.claro {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+}
+
+.contact {
+    background-color: transparent;
+    border: 2px solid #9b59b6;
+    color: #9b59b6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact:hover {
+    background-color: #9b59b6;
+    color: #fff;
+}
+
+.contact.claro {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+}
+
+.image-area {
+    position: relative;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+}
+
+.about {
+    padding: 50px;
+    text-align: center;
+}
+
+x .about h2 {
+    font-size: 28px;
+}
+
+.about p {
+    font-size: 18px;
+}
+
+.habilidades {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #8a2be2;
+    /* Cor da fonte */
+}
+
+.icone-skill {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.claro .skills-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.claro .skill {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.claro .icone-skill {
+    filter: none;
+}
